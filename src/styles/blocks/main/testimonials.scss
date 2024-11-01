@@ -1,7 +1,9 @@
 .section__testimonials {
   @include content-padding-inline;
+  @include page-grid;
 
   &__tittle {
+    grid-column: 1 / -1;
     &__parent {
       @include hover(transform, scale(1.05));
       @include poppins(700);
@@ -28,17 +30,6 @@
       @include on-tablet {
         width: 200px;
       }
-    }
-  }
-
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @include on-small-desktop {
-      flex-direction: row;
-      gap: 30px;
     }
   }
 }
@@ -68,7 +59,36 @@
     padding: 32px 48px;
   }
 
+  @include on-desktop {
+    height: 494px;
+    width: 362px;
+  }
+
   @include hover(transform, scale(1.05));
+
+  &-first {
+    grid-column: 1 / -1;
+
+    @include on-small-desktop {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &-second {
+    grid-column: 1 / -1;
+
+    @include on-small-desktop {
+      grid-column: 5 / span 4;
+    }
+  }
+
+  &-third {
+    grid-column: 1 / -1;
+
+    @include on-small-desktop {
+      grid-column: 9 / span 4;
+    }
+  }
 
   &__image {
     display: flex;
@@ -86,6 +106,10 @@
       height: 196px;
     }
 
+    @include on-desktop {
+      height: 250px;
+    }
+
     &_img {
       @include hover(transform, scale(1.05));
 
@@ -99,12 +123,17 @@
       @include on-small-desktop {
         width: 110px;
       }
+
+      @include on-desktop {
+        width: 140px;
+      }
     }
 
     &::after,
     &::before {
       content: '';
       position: absolute;
+      box-sizing: border-box;
       background-color: $blue-color;
       width: 109px;
       height: 44px;
@@ -121,6 +150,11 @@
         width: 109px;
         height: 44px;
       }
+
+      @include on-desktop {
+        width: 139px;
+        height: 56px;
+      }
     }
 
     &::after {
@@ -136,6 +170,11 @@
         top: 40px;
         left: 15px;
       }
+
+      @include on-desktop {
+        top: 50px;
+        left: 15px;
+      }
     }
 
     &::before {
@@ -149,6 +188,11 @@
 
       @include on-small-desktop {
         bottom: 40px;
+        right: 15px;
+      }
+
+      @include on-desktop {
+        bottom: 50px;
         right: 15px;
       }
     }

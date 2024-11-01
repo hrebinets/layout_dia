@@ -25,6 +25,7 @@
     }
 
     @include on-small-desktop {
+      justify-self: start;
       grid-column: 1 / span 4;
       margin-top: 103px;
     }
